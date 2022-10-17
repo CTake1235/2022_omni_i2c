@@ -18,8 +18,8 @@
 #define anticw 0x45
 #define shortbreak 0x80
 
-#define Rturn 0x70
-#define Lturn 0x8f
+#define Rturn 0x8f
+#define Lturn 0x70
 
 I2C              i2c(PB_9,PB_8);
 UnbufferedSerial raspi(PA_0,PA_1,9600);
@@ -112,6 +112,12 @@ int main(){
                     send(sitaMD,shortbreak);
                     send(hidariMD,shortbreak); 
             }
+        }
+        else{
+            send(ueMD,shortbreak);
+            send(migiMD,shortbreak);
+            send(sitaMD,shortbreak);
+            send(hidariMD,shortbreak);
         }
     }
 }
